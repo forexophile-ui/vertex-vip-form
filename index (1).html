@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vertex XAUUSD Trading — VIP Subscription Form</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E2C06A;
+    --gold-dim: #8A6E32;
+    --bg: #0A0A0A;
+    --card: #111111;
+    --card2: #161616;
+    --border: #2A2A2A;
+    --border-gold: #3A2E10;
+    --text: #E8E8E8;
+    --text-dim: #888888;
+    --text-muted: #555555;
+    --red: #E05252;
+    --green: #4CAF50;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px 32px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0D0D0D 0%, #0A0A0A 100%);
+    border-bottom: 1px solid var(--border-gold);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect fill='%230A0A0A' width='100%25' height='100%25'/%3E%3Crect fill='%23C9A84C' opacity='0.04' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--gold-dim);
+    border-radius: 20px;
+    padding: 5px 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .hero h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(16px, 4vw, 24px);
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1.3;
+  }
+
+  /* ── BRAND BAR ── */
+  .brand-bar {
+    background: #0D0D0D;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand-logo {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .brand-name {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+  .brand-sub {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    padding: 18px 8px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* ── WELCOME CARD ── */
+  .welcome-card {
+    background: var(--card);
+    border: 1px solid var(--border-gold);
+    border-radius: 14px;
+    padding: 28px 24px;
+    margin: 28px 0 0;
+    text-align: center;
+    font-style: italic;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .welcome-card .gold { color: var(--gold); font-weight: 600; font-style: normal; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0 16px;
+  }
+  .section-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold-dim), transparent);
+  }
+
+  /* ── FORM CARD ── */
+  .form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ── FIELD ── */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .field-label .star { color: var(--gold); }
+  .field-hint {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: -3px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea {
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 15px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  input[type="text"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--gold-dim);
+  }
+  input::placeholder, textarea::placeholder { color: var(--text-muted); }
+  select { appearance: none; cursor: pointer; }
+  select option { background: #111; }
+  textarea { resize: vertical; min-height: 110px; }
+
+  /* ── RADIO OPTIONS ── */
+  .radio-group { display: flex; flex-direction: column; gap: 8px; }
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .radio-option:hover { border-color: var(--gold-dim); }
+  .radio-option input[type="radio"] { display: none; }
+  .radio-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .radio-dot::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .radio-option input:checked ~ .radio-dot { border-color: var(--gold); }
+  .radio-option input:checked ~ .radio-dot::after { opacity: 1; }
+  .radio-option.selected { border-color: var(--gold-dim); background: rgba(201,168,76,0.05); }
+  .radio-label { font-size: 14px; font-weight: 500; color: #ddd; }
+
+  .best-deal {
+    margin-left: auto;
+    background: var(--gold);
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── CHECKBOX OPTIONS ── */
+  .check-group { display: flex; flex-direction: column; gap: 8px; }
+  .check-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .check-option:hover { border-color: var(--gold-dim); }
+  .check-option input[type="checkbox"] { display: none; }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: transparent;
+  }
+  .check-option input:checked ~ .check-box {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+  }
+  .check-option.selected { border-color: var(--gold-dim); background: rgba(201,168,76,0.04); }
+  .check-label { font-size: 14px; color: #ccc; line-height: 1.5; }
+
+  /* ── PAYMENT INFO CARD ── */
+  .pay-info-card {
+    background: #0D0B05;
+    border: 1px solid var(--gold-dim);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .pay-info-card h3 {
+    color: var(--gold);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .pay-info-card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+  .pay-info-card p strong { color: var(--red); }
+
+  .contact-cards { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .contact-card {
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-card-link {
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-card-link:hover {
+    border-color: var(--gold-dim);
+    background: rgba(201,168,76,0.07);
+  }
+  .contact-card-link:hover .contact-card-val {
+    text-decoration: underline;
+  }
+  .contact-card-icon { font-size: 22px; flex-shrink: 0; }
+  .contact-card-meta { font-size: 10px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; }
+  .contact-card-val { font-size: 15px; font-weight: 600; color: var(--gold); }
+
+  .steps-divider {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    margin: 16px 0 12px;
+    position: relative;
+  }
+  .steps-divider::before, .steps-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: var(--border);
+  }
+  .steps-divider::before { left: 0; }
+  .steps-divider::after { right: 0; }
+
+  .steps-list { display: flex; flex-direction: column; gap: 8px; }
+  .step-item {
+    background: #0D0D0D;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-text { font-size: 14px; color: #bbb; line-height: 1.5; }
+  .step-text strong { color: #fff; }
+
+  .security-notice {
+    background: rgba(160,30,30,0.12);
+    border: 1px solid rgba(160,30,30,0.4);
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #cc8080;
+    line-height: 1.6;
+  }
+  .security-notice strong { color: var(--red); }
+
+  /* ── FILE UPLOAD ── */
+  .upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    background: #0D0D0D;
+  }
+  .upload-zone:hover { border-color: var(--gold-dim); }
+  .upload-zone .icon { font-size: 32px; margin-bottom: 10px; }
+  .upload-zone p { color: var(--text-dim); font-size: 14px; }
+  .upload-zone small { color: var(--text-muted); font-size: 12px; }
+  #fileInput { display: none; }
+  #fileName { margin-top: 8px; font-size: 12px; color: var(--gold); min-height: 18px; }
+
+  /* ── SUBMIT ── */
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #C9A84C, #A8863A, #C9A84C);
+    background-size: 200% 100%;
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 28px;
+    transition: background-position 0.3s, transform 0.1s;
+  }
+  .submit-btn:hover { background-position: right center; }
+  .submit-btn:active { transform: scale(0.99); }
+
+  /* ── SUCCESS ── */
+  .success-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .success-overlay.show { display: flex; }
+  .success-box {
+    background: var(--card);
+    border: 1px solid var(--gold-dim);
+    border-radius: 20px;
+    padding: 40px 28px;
+    text-align: center;
+    max-width: 380px;
+    width: 100%;
+  }
+  .success-icon { font-size: 56px; margin-bottom: 16px; }
+  .success-box h2 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 10px; }
+  .success-box p { color: #aaa; font-size: 14px; line-height: 1.7; }
+
+  /* ── SELECT WRAPPER ── */
+  .select-wrap { position: relative; }
+  .select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+  }
+  .select-wrap select { padding-right: 36px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 480px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-bottom: 1px solid var(--border); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(3) { border-bottom: none; }
+    .stat:nth-child(4) { border-right: none; border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ XAUUSD · GOLD TRADING ✦</div>
+  <h1>VIP Gold Trading Community</h1>
+  <h2>Official Subscription Form</h2>
+</div>
+
+<!-- BRAND BAR -->
+<div class="brand-bar">
+  <div class="brand-logo">🐻</div>
+  <div>
+    <div class="brand-name">VERTEX</div>
+    <div class="brand-sub">XAUUSD TRADING · VIP</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">92%</div><div class="stat-label">Accuracy</div></div>
+  <div class="stat"><div class="stat-num">1:5</div><div class="stat-label">Reward:Risk</div></div>
+  <div class="stat"><div class="stat-num">280+</div><div class="stat-label">Pips Delivered</div></div>
+  <div class="stat"><div class="stat-num">3–4</div><div class="stat-label">Setups Daily</div></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- WELCOME -->
+  <div class="welcome-card">
+    <p>Welcome to the most precise and professional XAUUSD trading community. This is your first step towards <span class="gold">consistent profits</span>, <span class="gold">capital protection</span> and <span class="gold">elite-level Gold analysis.</span></p>
+    <br>
+    <p>Please fill out this form carefully. Once submitted, our team will contact you within <span class="gold">24 hours</span> to complete your VIP activation.</p>
+    <br>
+    <p>Slots are strictly limited — thank you for choosing excellence. 🏆</p>
+  </div>
+
+  <!-- SECTION 1: PERSONAL DETAILS -->
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">Personal Details</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Full Name <span class="star">★</span></label>
+      <input type="text" id="fullName" placeholder="Enter your full name" />
+    </div>
+
+    <div class="field">
+      <label class="field-label">Telegram Username <span class="star">★</span></label>
+      <div class="field-hint">Required for adding you to the VIP group</div>
+      <input type="text" id="telegram" placeholder="e.g. @yourname" />
+    </div>
+
+    <div class="field">
+      <label class="field-label">WhatsApp Number <span class="star">★</span></label>
+      <div class="field-hint">Include country code</div>
+      <input type="tel" id="whatsapp" placeholder="e.g. +92xxxxxxxxxx" />
+    </div>
+
+    <div class="field">
+      <label class="field-label">Country <span class="star">★</span></label>
+      <div class="select-wrap">
+        <select id="country">
+          <option value="">Select your country</option>
+          <option>Pakistan</option><option>United Kingdom</option><option>United States</option>
+          <option>United Arab Emirates</option><option>Saudi Arabia</option><option>India</option>
+          <option>Bangladesh</option><option>Nigeria</option><option>Kenya</option>
+          <option>South Africa</option><option>Malaysia</option><option>Indonesia</option>
+          <option>Turkey</option><option>Egypt</option><option>Canada</option>
+          <option>Australia</option><option>Germany</option><option>France</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Preferred Contact Platform <span class="star">★</span></label>
+      <div class="radio-group" id="contactPlatform">
+        <label class="radio-option"><input type="radio" name="contactPlatform" value="WhatsApp"><div class="radio-dot"></div><span class="radio-label">📱 WhatsApp</span></label>
+        <label class="radio-option"><input type="radio" name="contactPlatform" value="Telegram"><div class="radio-dot"></div><span class="radio-label">✈️ Telegram</span></label>
+        <label class="radio-option"><input type="radio" name="contactPlatform" value="Both"><div class="radio-dot"></div><span class="radio-label">⚡ Both</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SUBSCRIPTION PLAN -->
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">Subscription Plan</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Choose Your VIP Plan <span class="star">★</span></label>
+      <div class="radio-group" id="vipPlan">
+        <label class="radio-option"><input type="radio" name="vipPlan" value="Monthly — $120"><div class="radio-dot"></div><span class="radio-label">📅 Monthly — $120</span></label>
+        <label class="radio-option"><input type="radio" name="vipPlan" value="Yearly — $150"><div class="radio-dot"></div><span class="radio-label">📅 Yearly — $150</span></label>
+        <label class="radio-option"><input type="radio" name="vipPlan" value="Lifetime — $200"><div class="radio-dot"></div><span class="radio-label">♾️ Lifetime — $200 <span class="best-deal">BEST DEAL</span></span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Trading Platform <span class="star">★</span></label>
+      <div class="radio-group" id="tradingPlatform">
+        <label class="radio-option"><input type="radio" name="tradingPlatform" value="MT4"><div class="radio-dot"></div><span class="radio-label">MT4</span></label>
+        <label class="radio-option"><input type="radio" name="tradingPlatform" value="MT5"><div class="radio-dot"></div><span class="radio-label">MT5</span></label>
+        <label class="radio-option"><input type="radio" name="tradingPlatform" value="cTrader"><div class="radio-dot"></div><span class="radio-label">cTrader</span></label>
+        <label class="radio-option"><input type="radio" name="tradingPlatform" value="Other"><div class="radio-dot"></div><span class="radio-label">Other</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Trading Experience Level <span class="star">★</span></label>
+      <div class="radio-group" id="experience">
+        <label class="radio-option"><input type="radio" name="experience" value="Beginner"><div class="radio-dot"></div><span class="radio-label">🟢 Beginner — Less than 1 year</span></label>
+        <label class="radio-option"><input type="radio" name="experience" value="Intermediate"><div class="radio-dot"></div><span class="radio-label">🟡 Intermediate — 1 to 3 years</span></label>
+        <label class="radio-option"><input type="radio" name="experience" value="Advanced"><div class="radio-dot"></div><span class="radio-label">🔴 Advanced — 3+ years</span></label>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: PAYMENT METHOD -->
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">Payment Method</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Preferred Payment Method <span class="star">★</span></label>
+      <div class="radio-group" id="paymentMethod">
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="USDT TRC20"><div class="radio-dot"></div><span class="radio-label">USDT TRC20</span></label>
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="USDT BEP20"><div class="radio-dot"></div><span class="radio-label">USDT BEP20</span></label>
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="Binance Pay"><div class="radio-dot"></div><span class="radio-label">Binance Pay</span></label>
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="Bitcoin (BTC)"><div class="radio-dot"></div><span class="radio-label">Bitcoin (BTC)</span></label>
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="Bank Transfer (IBAN)"><div class="radio-dot"></div><span class="radio-label">Bank Transfer (IBAN)</span></label>
+        <label class="radio-option"><input type="radio" name="paymentMethod" value="Other"><div class="radio-dot"></div><span class="radio-label">Other</span></label>
+      </div>
+    </div>
+
+    <div class="field" id="otherPaymentField" style="display:none;">
+      <label class="field-label">If "Other" — Please Specify</label>
+      <input type="text" id="otherPayment" placeholder="Specify your payment method" />
+    </div>
+  </div>
+
+  <!-- SECTION 4: TRADING GOALS -->
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">Your Trading Goals</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Primary Goal for Joining VIP <span class="star">★</span></label>
+      <div class="radio-group" id="primaryGoal">
+        <label class="radio-option"><input type="radio" name="primaryGoal" value="Generate consistent daily profits"><div class="radio-dot"></div><span class="radio-label">💰 Generate consistent daily profits</span></label>
+        <label class="radio-option"><input type="radio" name="primaryGoal" value="Protect my capital with expert guidance"><div class="radio-dot"></div><span class="radio-label">🛡️ Protect my capital with expert guidance</span></label>
+        <label class="radio-option"><input type="radio" name="primaryGoal" value="Grow a small account professionally"><div class="radio-dot"></div><span class="radio-label">📈 Grow a small account professionally</span></label>
+        <label class="radio-option"><input type="radio" name="primaryGoal" value="Learn professional Gold analysis"><div class="radio-dot"></div><span class="radio-label">🎓 Learn professional Gold analysis</span></label>
+        <label class="radio-option"><input type="radio" name="primaryGoal" value="All of the above"><div class="radio-dot"></div><span class="radio-label">⭐ All of the above</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">How Did You Discover Us? <span class="star">★</span></label>
+      <div class="radio-group" id="discoverUs">
+        <label class="radio-option"><input type="radio" name="discoverUs" value="Telegram"><div class="radio-dot"></div><span class="radio-label">Telegram</span></label>
+        <label class="radio-option"><input type="radio" name="discoverUs" value="WhatsApp"><div class="radio-dot"></div><span class="radio-label">WhatsApp</span></label>
+        <label class="radio-option"><input type="radio" name="discoverUs" value="Instagram"><div class="radio-dot"></div><span class="radio-label">Instagram</span></label>
+        <label class="radio-option"><input type="radio" name="discoverUs" value="Referred by an existing VIP member"><div class="radio-dot"></div><span class="radio-label">Referred by an existing VIP member</span></label>
+        <label class="radio-option"><input type="radio" name="discoverUs" value="Other"><div class="radio-dot"></div><span class="radio-label">Other</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Any Questions Before Joining? <span style="color:var(--text-dim);font-weight:400;">(Optional)</span></label>
+      <textarea id="questions" placeholder="Ask us anything. We will respond personally within 24 hours."></textarea>
+    </div>
+  </div>
+
+  <!-- SECTION 5: PAYMENT INSTRUCTIONS -->
+  <div class="section-header">
+    <div class="section-num">5</div>
+    <div class="section-title">Payment Instructions</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="pay-info-card">
+      <h3>💳 How to Complete Your Payment</h3>
+      <p>Do <strong>NOT</strong> send payment yet. Contact us first on any official channel below to receive your wallet address and payment instructions.</p>
+    </div>
+
+    <div class="contact-cards">
+      <a href="https://t.me/Jackson_Standard" target="_blank" class="contact-card contact-card-link">
+        <div class="contact-card-icon">✈️</div>
+        <div>
+          <div class="contact-card-meta">Telegram</div>
+          <div class="contact-card-val">@Jackson_Standard</div>
+        </div>
+      </a>
+      <a href="https://wa.me/12017801321" target="_blank" class="contact-card contact-card-link">
+        <div class="contact-card-icon">📱</div>
+        <div>
+          <div class="contact-card-meta">WhatsApp — US</div>
+          <div class="contact-card-val">+1 201 780 1321</div>
+        </div>
+      </a>
+      <a href="https://wa.me/447348496795" target="_blank" class="contact-card contact-card-link">
+        <div class="contact-card-icon">📱</div>
+        <div>
+          <div class="contact-card-meta">WhatsApp — UK</div>
+          <div class="contact-card-val">+44 7348 496795</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="steps-divider">STEPS TO ACTIVATE</div>
+
+    <div class="steps-list">
+      <div class="step-item"><div class="step-num">1</div><div class="step-text">Submit this form completely</div></div>
+      <div class="step-item"><div class="step-num">2</div><div class="step-text">Contact us on <strong>Telegram or WhatsApp</strong></div></div>
+      <div class="step-item"><div class="step-num">3</div><div class="step-text">Receive <strong>wallet address</strong> from us privately</div></div>
+      <div class="step-item"><div class="step-num">4</div><div class="step-text">Complete your payment</div></div>
+      <div class="step-item"><div class="step-num">5</div><div class="step-text">Send <strong>payment screenshot</strong> to us</div></div>
+      <div class="step-item"><div class="step-num">6</div><div class="step-text">Get added to <strong>VIP instantly</strong> ✅</div></div>
+    </div>
+
+    <div class="security-notice">
+      ⚠️ <strong>SECURITY NOTICE:</strong> We will NEVER contact you first asking for payment. Always initiate contact yourself through the official channels above. Beware of anyone impersonating our service. We are NOT responsible for payments sent to unofficial contacts.
+    </div>
+  </div>
+
+  <!-- SECTION 6: PAYMENT PROOF -->
+  <div class="section-header">
+    <div class="section-num">6</div>
+    <div class="section-title">Payment Proof</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Attach Payment Screenshot <span style="color:var(--text-dim);font-weight:400;">(Upload after payment)</span></label>
+      <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+        <div class="icon">🔗</div>
+        <p>Click to upload or drag &amp; drop</p>
+        <small>JPG, PNG, PDF — Max 10MB</small>
+        <div id="fileName"></div>
+      </div>
+      <input type="file" id="fileInput" accept="image/*,.pdf" onchange="showFileName(this)">
+    </div>
+  </div>
+
+  <!-- SECTION 7: TERMS & AGREEMENT -->
+  <div class="section-header">
+    <div class="section-num">7</div>
+    <div class="section-title">Terms &amp; Agreement</div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="form-card">
+    <div class="field">
+      <label class="field-label">Please confirm all of the following: <span class="star">★</span></label>
+      <div class="check-group" id="agreements">
+        <label class="check-option"><input type="checkbox" name="agree" value="risk"><div class="check-box">✓</div><span class="check-label">I understand that trading involves financial risk and past results do not guarantee future performance</span></label>
+        <label class="check-option"><input type="checkbox" name="agree" value="noshare"><div class="check-box">✓</div><span class="check-label">I will NOT share VIP signals, analysis or content outside the community</span></label>
+        <label class="check-option"><input type="checkbox" name="agree" value="nonrefund"><div class="check-box">✓</div><span class="check-label">I understand that subscription fees are non-refundable once VIP access is activated</span></label>
+        <label class="check-option"><input type="checkbox" name="agree" value="active"><div class="check-box">✓</div><span class="check-label">I will remain active to timely catch VIP signals and follow risk management rules</span></label>
+        <label class="check-option"><input type="checkbox" name="agree" value="accurate"><div class="check-box">✓</div><span class="check-label">I confirm all information provided in this form is accurate and truthful</span></label>
+      </div>
+    </div>
+  </div>
+
+  <button class="submit-btn" onclick="submitForm()">🏆 SUBMIT VIP APPLICATION</button>
+
+</div><!-- /container -->
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-box">
+    <div class="success-icon">🏆</div>
+    <h2>Application Submitted!</h2>
+    <p>Thank you for joining Vertex XAUUSD VIP.<br><br>Our team will contact you within <strong style="color:var(--gold)">24 hours</strong> to complete your activation.<br><br>Please reach out to us on Telegram or WhatsApp in the meantime.</p>
+    <br>
+    <button class="submit-btn" style="margin-top:0;font-size:13px;padding:12px;" onclick="document.getElementById('successOverlay').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+  // Radio button selection highlight
+  document.querySelectorAll('.radio-group').forEach(group => {
+    group.querySelectorAll('.radio-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        group.querySelectorAll('.radio-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+      });
+    });
+  });
+
+  // Checkbox selection highlight
+  document.querySelectorAll('.check-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const cb = opt.querySelector('input[type="checkbox"]');
+      cb.checked = !cb.checked;
+      opt.classList.toggle('selected', cb.checked);
+    });
+  });
+
+  // Show "Other" payment field
+  document.querySelectorAll('input[name="paymentMethod"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('otherPaymentField').style.display =
+        r.value === 'Other' && r.checked ? 'flex' : 'none';
+    });
+  });
+
+  // File name display
+  function showFileName(input) {
+    const el = document.getElementById('fileName');
+    el.textContent = input.files[0] ? '✓ ' + input.files[0].name : '';
+  }
+
+  // Submit
+  function submitForm() {
+    const required = {
+      'Full Name': document.getElementById('fullName').value.trim(),
+      'Telegram Username': document.getElementById('telegram').value.trim(),
+      'WhatsApp Number': document.getElementById('whatsapp').value.trim(),
+      'Country': document.getElementById('country').value,
+      'Preferred Contact Platform': document.querySelector('input[name="contactPlatform"]:checked'),
+      'VIP Plan': document.querySelector('input[name="vipPlan"]:checked'),
+      'Trading Platform': document.querySelector('input[name="tradingPlatform"]:checked'),
+      'Experience Level': document.querySelector('input[name="experience"]:checked'),
+      'Payment Method': document.querySelector('input[name="paymentMethod"]:checked'),
+      'Primary Goal': document.querySelector('input[name="primaryGoal"]:checked'),
+      'How You Discovered Us': document.querySelector('input[name="discoverUs"]:checked'),
+    };
+
+    for (const [key, val] of Object.entries(required)) {
+      if (!val) {
+        alert('Please fill in: ' + key);
+        return;
+      }
+    }
+
+    const allChecks = document.querySelectorAll('input[name="agree"]');
+    const allChecked = [...allChecks].every(c => c.checked);
+    if (!allChecked) {
+      alert('Please confirm all Terms & Agreement items.');
+      return;
+    }
+
+    // Here you would normally POST to Google Sheets via Apps Script URL
+    // Example: fetch('YOUR_GOOGLE_APPS_SCRIPT_URL', { method:'POST', body: JSON.stringify(data) })
+
+    document.getElementById('successOverlay').classList.add('show');
+  }
+</script>
+</body>
+</html>
